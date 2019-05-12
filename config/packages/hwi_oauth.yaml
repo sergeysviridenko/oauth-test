@@ -7,4 +7,4 @@ hwi_oauth:
             type:          twitch
             client_id:     '%env(TWITCH_CLIENT_ID)%'
             client_secret: '%env(TWITCH_SECRET)%'
-            redirect_uri:   'env(TWITCH_REDIRECT_URI)'
+            scope: user_read

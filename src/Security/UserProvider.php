@@ -23,9 +23,7 @@ class UserProvider extends OAuthUserProvider
      */
     public function loadUserByUsername($username)
     {
-//        return new User();
-
-        throw new \Exception('TODO:' + var_dump($username));
+        return (new User())->setUsername($username);
 
         // Load a User object from your data source or throw UsernameNotFoundException.
         // The $username argument may not actually be a username:
@@ -40,7 +38,6 @@ class UserProvider extends OAuthUserProvider
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
         dump($response);
-        die();
 
         return $this->loadUserByUsername($response->getNickname());
     }
@@ -63,6 +60,8 @@ class UserProvider extends OAuthUserProvider
         if (!$user instanceof User) {
             throw new UnsupportedUserException(sprintf('Invalid user class "%s".', get_class($user)));
         }
+
+        return $this->loadUserByUsername($user->getUsername());
 
         // Return a User object after making sure its data is "fresh".
         // Or throw a UsernameNotFoundException if the user no longer exists.

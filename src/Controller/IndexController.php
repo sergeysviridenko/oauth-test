@@ -8,17 +8,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-/**
- * @Route("/")
- */
-class Index extends Controller
+class IndexController extends Controller
 {
     /**
-     * @Route("")
+     * @Route("/")
      *
      * @return Response
      */
-    public function list()
+    public function index()
     {
 //        return $this->render('base.html.twig');
 

@@ -17,6 +17,11 @@ class IndexController extends Controller
      */
     public function index()
     {
+        dump('OK');
+        dump($this->getUser());
+        dump($this->get('session'));
+        die();
+
 //        return $this->render('base.html.twig');
 
         $helixGuzzleClient = new HelixGuzzleClient('dfq9smwt81rvfvb7utm7643hdv7sya');

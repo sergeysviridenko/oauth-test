@@ -2,6 +2,7 @@
 
 namespace App\Security;
 
+use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
 use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
@@ -22,11 +23,26 @@ class UserProvider extends OAuthUserProvider
      */
     public function loadUserByUsername($username)
     {
+//        return new User();
+
+        throw new \Exception('TODO:' + var_dump($username));
+
         // Load a User object from your data source or throw UsernameNotFoundException.
         // The $username argument may not actually be a username:
         // it is whatever value is being returned by the getUsername()
         // method in your User class.
         throw new \Exception('TODO: fill in loadUserByUsername() inside '.__FILE__);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function loadUserByOAuthUserResponse(UserResponseInterface $response)
+    {
+        dump($response);
+        die();
+
+        return $this->loadUserByUsername($response->getNickname());
     }
 
     /**

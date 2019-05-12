@@ -2,12 +2,12 @@
 
 namespace App\Security;
 
+use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Security\Core\User\UserProviderInterface;
 
-class UserProvider implements UserProviderInterface
+class UserProvider extends OAuthUserProvider
 {
     /**
      * Symfony calls this method if you use features like switch_user

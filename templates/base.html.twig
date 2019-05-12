@@ -1,0 +1,32 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+    {#<head>#}
+        {#<meta charset="UTF-8">#}
+        {#<title>{% block title %}Welcome!{% endblock %}</title>#}
+        {#{% block stylesheets %}{% endblock %}#}
+    {#</head>#}
+    {#<body>fsdfsdfdsfdsfsdfdsf#}
+        {#{% block body %}{% endblock %}#}
+        {#{% block javascripts %}{% endblock %}#}
+    {#</body>#}
+{#</html>#}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="msapplication-tap-highlight" content="no">
+    </head>
+    <body>dsfsdfsdfsdfdsfsdf
+        <script src="{{ asset('public/js/jquery-3.4.1.min.js') }}"></script>
+
+        <script>
+            console.log('asdasdsadsadsad');
+            (function(val) {
+                console.log(val);
+            })('test');
+        </script>
+    </body>
+</html>

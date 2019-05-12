@@ -1,0 +1,4 @@
+frontend:
+  resource: '../src/Controller'
+  type: annotation
+  prefix: /

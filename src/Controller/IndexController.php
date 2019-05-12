@@ -11,15 +11,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class IndexController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="app_index")
      *
      * @return Response
      */
     public function index()
     {
-        dump($this->getUser());
-
-        return $this->render('base.html.twig');
+        return $this->render('main/main.html.twig');
 
 //        $helixGuzzleClient = new HelixGuzzleClient('dfq9smwt81rvfvb7utm7643hdv7sya');
 //        $newTwitchApi = new NewTwitchApi($helixGuzzleClient, 'dfq9smwt81rvfvb7utm7643hdv7sya', '3ssx7rhl9ts5kd63mojlb9soejzt1v');

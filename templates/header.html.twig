@@ -1,0 +1,27 @@
+{% block main_header %}
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="{{ path('app_index') }}">Twitch</a>
+
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('app_index') }}">Main</a>
+{#                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>#}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="{{ path('app_index') }}">Dashboard</a>
+                </li>
+            </ul>
+            <div class="mt-2 mt-md-0">
+                <a href="{{ hwi_oauth_login_url('twitch') }}"> Sign in by twitch </a> <br/>
+
+                {# @TODO Logout #}
+                <a href="{{ path('logout') }}" class="btn btn-default btn-flat">Sign out</a>
+            </div>
+        </div>
+    </nav>
+    {% if error is defined and error %}
+        <span>{{ error }}</span>
+    {% endif %}
+{% endblock %}

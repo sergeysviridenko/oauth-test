@@ -17,3 +17,6 @@ hwi_oauth_login:
 
 twitch_login:
   path:    /login/check-twitch
+
+logout:
+  path: /logout

@@ -6,9 +6,43 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class User implements UserInterface
 {
+    /** @var int */
+    private $id;
+
+    /** @var string */
     private $username;
 
+    /** @var string */
+    private $logoLink;
+
+    /** @var string */
+    private $email;
+
+    /** @var string */
+    private $profileLink;
+
+    /** @var array */
     private $roles = [];
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     *
+     * @return User
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * A visual identifier that represents this user.
@@ -23,6 +57,66 @@ class User implements UserInterface
     public function setUsername(string $username): self
     {
         $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogoLink(): string
+    {
+        return $this->logoLink;
+    }
+
+    /**
+     * @param string $logoLink
+     *
+     * @return User
+     */
+    public function setLogoLink(string $logoLink): User
+    {
+        $this->logoLink = $logoLink;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     *
+     * @return User
+     */
+    public function setEmail(string $email): User
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProfileLink(): string
+    {
+        return $this->profileLink;
+    }
+
+    /**
+     * @param string $profileLink
+     *
+     * @return User
+     */
+    public function setProfileLink(string $profileLink): User
+    {
+        $this->profileLink = $profileLink;
 
         return $this;
     }
